@@ -11,4 +11,4 @@ var t,o=arguments[3];!function(o,i){"function"==typeof t&&t.amd?t([],function(){
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./css/styles.css");var i=r(require("notiflix")),e=require("notiflix/build/notiflix-notify-aio");function r(i){return i&&i.__esModule?i:{default:i}}
 },{"./css/styles.css":"krre","notiflix":"cwzQ","notiflix/build/notiflix-notify-aio":"MeeU"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10/src.b5601f24.js.map
+//# sourceMappingURL=/new-test-1/src.b5601f24.js.map
