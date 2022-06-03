@@ -20,3 +20,18 @@ const lightbox = new SimpleLightbox('.photo-link', {
 
 refs.searchForm.addEventListener('submit', onSearchForm);
 refs.loadBtn.addEventListener('click', onLoadMoreBtn);
+
+
+
+
+// Зробити плавне прокручування сторінки після запиту і відтворення кожної наступної групи зображень.
+function smoothScroll(){
+    const { height: cardHeight } = document
+    .querySelector(".gallery")
+    .firstElementChild.getBoundingClientRect();
+
+    window.scrollBy({
+    top: cardHeight * 2,
+    behavior: "smooth",
+    });
+}
