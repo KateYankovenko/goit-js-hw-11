@@ -22,6 +22,20 @@ refs.searchForm.addEventListener('submit', onSearchForm);
 refs.loadBtn.addEventListener('click', onLoadMoreBtn);
 
 
+function resetMarkup() {
+  refs.gallery.innerHTML = '';
+}
+
+// function rewrightMarkup(markup) {
+//   refs.gallery.insertAdjacentHTML('beforeend', imgTemplate(markup));
+// }
+
+function chekIfInpIsEmpty() {
+  Notiflix.failure('Please, enter something in search field!');
+
+  notShowLoadBtn();
+  resetMarkup();
+}
 
 
 // Зробити плавне прокручування сторінки після запиту і відтворення кожної наступної групи зображень.
