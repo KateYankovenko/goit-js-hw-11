@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://KateYankovenko.github.io/goit-js-hw-10",
+  "homepage": "https://KateYankovenko.github.io/new-test-1",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
+    "build": "parcel build src/*.html --public-url /new-test-1"
   },
   "repository": {
     "type": "git",
