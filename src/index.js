@@ -1,5 +1,5 @@
 // error_reporting(E_ERROR | E_PARSE);
-// import './css/styles.css';
+import './css/styles.css';
 import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from 'simplelightbox';
@@ -20,6 +20,65 @@ const lightbox = new SimpleLightbox('.photo-link', {
 
 refs.searchForm.addEventListener('submit', onSearchForm);
 refs.loadBtn.addEventListener('click', onLoadMoreBtn);
+
+
+async function onSearchForm(e) {
+  e.preventDefault();
+//inquery
+  const input = e.currentTarget.elements.searchQuery.value;
+// input.query =  e.currentTarget.elements.searchQuery;
+  if (input === '') {
+    chekIfInpIsEmpty();
+    return;
+  }
+
+  ApiService.resetPage();
+  ApiService.queryValue(input);
+
+  try {
+    const result = await ApiService.fetchPixabayData();
+    resetMarkup(); 
+    rewrightResult(result);
+     
+      
+    smoothScroll();
+    ApiService.setTotalHits(result.data.totalHits);
+    lightbox.refresh();
+    Notify.success(`Hooray! We found ${ApiService.totalHits} images.`);
+    showLoadBtn();
+  } catch (error) {
+    Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.',
+    );
+  }
+// "We're sorry, but you've reached the end of search results."
+} 
+
+async function onLoadMoreBtn() {
+    e.preventDefault();
+    smoothScroll();
+    
+    const result = await ApiService.fetchPixabayData();
+    
+    rewrightMarkup(result);
+    // smoothScroll();
+
+    if (ApiService.totalHits <= 40) {
+       notShowLoadBtn();
+       Notify.info("We're sorry, but you've reached the end of search results");
+    // chekEndOfTotalHits();
+    return;
+  }
+
+
+  ApiService.lastTotalHits();
+  lightbox.refresh();
+    Notify.success(`Hooray! We found ${ApiService.totalHits} images.`);
+    
+    function notShowLoadBtn() {
+    refs.onLoadMoreBtn.classList.add('is-hidden');
+ }
+}
 
 
 function resetMarkup() {
