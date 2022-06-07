@@ -1,61 +1,90 @@
-body{
-    margin: 0;
-    font-family: sans-serif;
-    font-weight: 400;
-    
+body {
+
+  margin: 0;
+  padding: 50px 0 50px 0;
+
 }
 .wrapp {
-    position: fixed;
-    display: flex;
-    /* text-align: ; */
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 100vw;
-    z-index: 10;
-    background-color: #ba1393;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(60, 160, 6);
 }
-
 .search-form {
-    position: relative;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-
-input[name='searchQuery'] {
-    height: 40px;
-    /* border-color: transparent;   */
+#search-box {
+  margin-right: 5px;
+  padding: 9px;
+  border: none;
+  border-radius: 5px;
 }
-
-button[type='submit'] {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    border: none;
-    background-color: transparent;
-}
-/* .icon-cloud:before {
-  content: "\e9c1";
-} */
-button[type='submit']:hover .search-svg {
-    fill: #d16c78;
+.search-btn,
+.load-more {
+  padding: 8px;
+  height: 35px;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(12, 195, 240);
+  transition: 150ms linear;
 }
 .load-more {
-    display: block;
-    padding: 10px 20px;
-    margin: 10px auto;
-    border: none;
-    background-color: #7bec8e;
-    cursor: pointer;
-    color: #fff;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  width: 100px;
 }
-
+.search-btn:hover,
 .load-more:hover {
-    background-color: #ba1393;
-    color: #fff;
+  background-color: blue;
+}
+/* .search-svg:hover {
+  color: brown;
+} */
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  /* margin: -10px; */
+}
+img {
+  display: block;
+  width: 100%;
+ 
+}
+.photo-card {
+  margin: 10px;
+  overflow: hidden;
+  width: calc((100% - 2 * 10px) / 5);
+  box-shadow: 1px 3px 24px 14px rgba(0,0,0,0.49);
+}
+.photo-card:hover {
+ transform: scale(1.2);
+}
+.card-info {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  text-align: center;
+}
+.card-item {
+  /* margin: 0; */
+  width: 100%;
+  font-size: 10px;
+  margin-right: 5px;
 }
 
-.load-more.is-hidden {
-    display: none;
+/* .bottomMessage {
+  text-align: center;
+} */
+.is-hidden {
+  display: none;
 }
