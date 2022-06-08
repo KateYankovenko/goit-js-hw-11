@@ -6,6 +6,7 @@ export default class NewApiService {
     this.value = '';
     this.totalHits = null;
     this.searchQuery = '';
+    
   }
 
   async fetchData() {
