@@ -5,7 +5,7 @@ import NewApiService from './pixabay';
 import { hitsPhotoCard } from './cardsRender';
 import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import throttle from 'lodash.throttle';
+
 
 const newApiService = new NewApiService();
 

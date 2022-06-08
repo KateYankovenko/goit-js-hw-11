@@ -2,10 +2,10 @@ import axios from 'axios';
 
 export default class NewApiService {
   constructor() {
-    this.searchQuery = '';
     this.page = 1;
     this.value = '';
     this.totalHits = null;
+    this.searchQuery = '';
   }
 
   async fetchData() {
@@ -14,7 +14,7 @@ export default class NewApiService {
       image_type: 'photo',
       safesearch: 'true',
       orientation: 'horizontal',
-      
+     
       // cookie: 'false',
     };
 
@@ -29,7 +29,7 @@ export default class NewApiService {
           hits: object.data.hits,
         };
       })
-      .catch(error => console.log('error', error));
+      .catch(error => console.log(error));
 
   }
   resetPage() {
@@ -38,7 +38,6 @@ export default class NewApiService {
   increasePage() {
     this.page += 1;
   }
-
   get query() {
     return this.searchQuery;
   }
@@ -46,6 +45,7 @@ export default class NewApiService {
     this.searchQuery = newQuery;
   }
 }
+
 
 
 

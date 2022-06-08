@@ -8,7 +8,7 @@ export function hitsPhotoCard(cards) {
   const markup = cards
     .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
       return `<div class="photo-card">
-  <a href="${largeImageURL}">
+  <a href="${largeImageURL}" class='photo-link'>
     <img src="${webformatURL}" alt="${tags}" loading="lazy" height="190px"/>
   </a>
   <div class="card-info">
