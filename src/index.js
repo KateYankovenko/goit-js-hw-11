@@ -76,6 +76,7 @@ function onLoadMore() {
   });
 }
 
+
 function clearCardSet() {
   refs.gallery.innerHTML = '';
 }

@@ -1,8 +1,8 @@
-import SimpleLightbox from 'simplelightbox';
+import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
+//When using the standalone variant (`simple-lightbox(.min).js`)
 const gallery = document.querySelector('.gallery');
-const newGallery = new SimpleLightbox('.newgallery');
+const newGallery = new SimpleLightbox('.gallery a');
 
 export function hitsPhotoCard(cards) {
   const markup = cards
